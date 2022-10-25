@@ -7,7 +7,7 @@
                     >
                     <span class="budget-comments">{{ item.comments }}</span>
                     <span class="budget-value">{{ item.value }}</span>
-                    <el-button type="danger" size="mini">Delete</el-button>
+                    <el-button type="danger" size="mini" @click="deleteItem(item.id)">Delete</el-button>
                 </div>
             </template>
             <el-alert v-else type="info" :title="emptyTitle" :closable="false"/>
@@ -28,6 +28,11 @@
             header: "Budget list",
             emptyTitle:"Empty list",
         }),
+        methods:{
+            deleteItem(id){
+                this.$emit('deleteItem',id)
+            }
+        },
         computed:{
             isEmpty(){
                 return !Object.keys(this.list).length
