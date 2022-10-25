@@ -10,9 +10,10 @@ import {
    Input,
    Select,
    Option,
+   Alert,
 } from 'element-ui';
 
-const elements = [Button, Card, Form, FormItem, Input, Select, Option];
+const elements = [Button, Card, Form, FormItem, Input, Select, Option, Alert];
 
 // configure language
 
