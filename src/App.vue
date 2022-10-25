@@ -1,17 +1,23 @@
 <template>
   <div id="app">
+    <TotalBalance
+    :total="totalBalance"
+    />
     <BudgetList
     :list="list"
+    @deleteItem="onDeleteItem"
     />
   </div>
 </template>
 
 <script>
 import BudgetList from '@/components/Budget-list'
+import TotalBalance from '@/components/Total-balance'
 export default {
   name: 'App',
   components: {
     BudgetList,
+    TotalBalance,
   },
   data:() => ({
     list:{
