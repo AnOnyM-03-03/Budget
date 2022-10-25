@@ -35,6 +35,16 @@ export default {
         },
     }
   }),
+  methods:{
+    onDeleteItem(id){
+        this.$delete(this.list,id)
+    }
+  },
+  computed:{
+    totalBalance(){
+        return Object.values(this.list).reduce((acc,item) => acc + item.value,0)
+    }
+  }
 }
 </script>
 
